@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 全局作用域
+    // 局部作用域
+
+    // JavaScript中没有块级作用域，ES6中有了块级作用域
+
+    {
+      // 代码块
+      // var a = 1;
+
+      // ES6中有块级作用域
+      let a = 1;
+    }
+
+    console.log(a);
+
+    if (true) {
+      var b = 2;
+    }
+    console.log(b);
+    
+
+  </script>
+</body>
+</html>

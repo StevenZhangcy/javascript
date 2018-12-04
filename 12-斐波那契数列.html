@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+      // 递归，斐波那契数列：1, 1, 2, 3, 5, 8, .......,n
+      // fn(n) = fn(n - 1) + fn(n - 2);
+
+      // 结束条件 n = 1, 2   --> 1
+
+      function fn(n) {
+        // 结束条件
+        if (n === 1 || n === 2) {
+          return 1;
+        }
+        return fn(n - 1) + fn(n - 2);
+        // fn(2)  --> fn(1) + fn(0)
+      }
+
+      console.log(fn(7));
+  </script>
+</body>
+</html>

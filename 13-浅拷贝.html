@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 对象拷贝
+    
+    // 1. 浅拷贝
+    function shadowCopy(src, des) {
+      // 源对象 src
+      // 目标对象 des
+      for (var key in src) {
+        des[key] = src[key];
+      }
+    }
+
+    var obj1 = {
+      type: 'person',
+      cars: ['玛莎拉蒂', 'QQ'],
+      dog: {
+        name: 'BYD',
+        age: 1
+      }
+    };
+
+    var obj2 = {};
+
+    shadowCopy(obj1, obj2);
+
+
+
+
+    // $.tab = function (options) {
+    //   var settings = {
+    //     xx: '1'
+    //   }
+    // }
+
+    // 2. 深拷贝
+  </script>
+</body>
+</html>

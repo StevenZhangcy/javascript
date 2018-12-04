@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="ul">
+    <li>1111</li>
+    <li>2222</li>
+    <li>3333</li>
+    <li>4444</li>
+  </ul>
+  <script>
+    var ul = document.getElementById('ul');
+    for (var i = 0; i < ul.children.length; i++) {
+      var li = ul.children[i];
+      
+      (function (index) {
+        // 给所有的li注册点击事件
+        li.onclick = function () {
+          console.log(index);
+        };
+      })(i);
+    }
+
+
+    // var ul = document.getElementById('ul');
+    // for (var i = 0; i < ul.children.length; i++) {
+    //   var li = ul.children[i];
+    //   // 记录当前索引
+    //   li.index = i;
+    //   // 给所有的li注册点击事件
+    //   li.onclick = function () {
+    //     console.log(this.index);
+    //   };
+    // }
+  </script>
+</body>
+</html>

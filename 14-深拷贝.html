@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 深拷贝
+    
+    function deepCopy(src, des) {
+      // 遍历对象的第一层属性
+      for (var key in src) {
+        // 判断一个变量是否是数组，是否是对象
+        // if (src[key] instanceof Array)
+        // if (src[key] instanceof Object)
+
+        if (src[key] instanceof Array) {
+          des[key] = [];
+          deepCopy(src[key], des[key]);
+        } else if (src[key] instanceof Object) {
+          des[key] = {};
+          deepCopy(src[key], des[key]);
+        } else {
+          des[key] = src[key];
+        }
+
+        // 如果是对象
+        // des[key] = {}
+        // 如果是数组
+        // des[key] = [];
+        
+
+        // 如果当前的属性是基本类型
+        // des[key] = src[key];
+      }
+    }
+  
+    var obj1 = {
+      type: 'person',
+      cars: ['玛莎拉蒂', 'QQ'],
+      dog: {
+        name: 'BYD',
+        age: 1
+      }
+    };
+
+    var obj2 = {};
+    
+    deepCopy(obj1, obj2);
+  </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  测试文字 <br>
+  <button id="btn1">按钮12</button>
+  <button id="btn2">按钮16</button>
+  <button id="btn3">按钮20</button>
+
+  <script>
+    var btn1 = document.getElementById('btn1');
+    var btn2 = document.getElementById('btn2');
+    var btn3 = document.getElementById('btn3');
+
+    function makeSize(size) {
+      return function () {
+        document.body.style.fontSize = size + 'px';
+      }
+    }
+
+    btn1.onclick = makeSize(12);
+    btn2.onclick = makeSize(16);
+    btn3.onclick = makeSize(20);
+
+
+    // btn1.onclick = function () {
+    //   document.body.style.fontSize = '12px';
+    // };
+
+    // btn2.onclick = function () {
+    //   document.body.style.fontSize = '16px';
+    // };
+
+    // btn3.onclick = function () {
+    //   document.body.style.fontSize = '20px';
+    // };
+  </script>
+</body>
+</html>

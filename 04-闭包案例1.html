@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 第一次调用生成一个随机数，以后每次调用都返回这个随机数
+    function fn() {
+      var num = parseInt(Math.random() * 10) + 1;
+
+      // 函数要访问该函数同一级作用域中的成员
+      return function () {
+        return num;
+      }
+    }
+
+    var f = fn();
+
+    console.log(f());
+    console.log(f());
+    console.log(f());
+    console.log(f());
+
+
+
+    // function fn() {
+    //   var num = parseInt(Math.random() * 10) + 1;
+    //   return num;
+    // }
+
+    // console.log(fn());
+    // console.log(fn());
+    // console.log(fn());
+    // console.log(fn());
+    
+  </script>
+</body>
+</html>

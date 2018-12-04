@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="box">
+    <ul>
+      <li>1111</li>
+      <li>2222</li>
+      <li>3333</li>
+      <li>4444</li>
+    </ul>
+
+    <div>这是div <span>span</span></div>
+  </div>
+
+  <script>
+    // 遍历dom树
+    function fn(element, callback) {
+      // 遍历element的子元素
+      for (var i = 0; i < element.children.length; i++) {
+        // 遍历到的直接子元素
+        var child = element.children[i];
+       
+        // 假设，想要给所有子元素注册事件，设置样式，设置内容
+        callback(child);
+
+        // 递归调用
+        fn(child);
+      }
+    }
+
+    var ul = document.querySelector('#box ul');
+    
+    fn(ul, function (child) {
+      child.onclick = function () {
+        console.log(this.innerText);
+      }
+    });
+
+
+  </script>
+</body>
+</html>

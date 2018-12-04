@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 写一个函数返回一个函数，返回的函数可以实现1+m,  100+m, 1000+m
+
+    // 1 + m    100 + m    5 + m    8 + m
+    function createFn(n) {
+      return function (m) {
+        return n + m;
+      }
+    }
+
+
+    var f1 = createFn(1);
+
+    console.log(f1(6));
+    // function f1(m) {
+    //   return 1 + m;
+    // }
+
+    var f100 = createFn(100);
+    // function f100(m) {
+    //   return 100 + m;
+    // } 
+  </script>
+</body>
+</html>
